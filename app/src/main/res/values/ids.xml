@@ -1,0 +1,16 @@
+<resources>
+    <item name="root_view" type="id" />
+    <item name="add_flashcard_button" type="id" />
+    <item name="delete_flashcard_button" type="id" />
+    <item name="edit_flashcard_button" type="id" />
+    <item name="answer_input" type="id" />
+    <item name="daisy_galaxy_button" type="id" />
+    <item name="lavender_galaxy_button" type="id" />
+    <item name="question_input" type="id" />
+    <item name="rose_galaxy_button" type="id" />
+    <item name="show_flashcards_button" type="id" />
+    <item name="sunflower_galaxy_button" type="id" />
+    <item name="toggle_theme_button" type="id" />
+    <item name="total_flashcards_button" type="id" />
+    <item name="main_layout" type="id" />
+</resources>

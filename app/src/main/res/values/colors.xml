@@ -1,0 +1,64 @@
+<resources>
+    <!-- Basic Colors -->
+    <color name="black">#FF000000</color> <!-- Black -->
+    <color name="white">#FFFFFFFF</color> <!-- White -->
+
+    <!-- Lavender Galaxy (A soft purple with stars feeling) -->
+    <color name="lavender_galaxy">#E6E6FA</color> <!-- Soft Lavender -->
+
+    <!-- Rose (Rich pinkish-red color) -->
+    <color name="rose">#FF007F</color> <!-- Rose Pink -->
+
+    <!-- Daisy (A bright yellow reminiscent of daisy petals) -->
+    <color name="daisy">#FFFF00</color> <!-- Bright Yellow -->
+
+    <!-- Sunflower (A warm golden yellow color) -->
+    <color name="sunflower">#FFCC00</color> <!-- Sunflower Yellow -->
+
+    <!-- Abstract Line Color (Cyan for abstract art feel) -->
+    <color name="abstract_line_color">#00FFFF</color> <!-- Cyan -->
+
+    <!-- Soft Pastel Colors -->
+    <color name="pastel_pink">#FFB6C1</color> <!-- Soft Pink -->
+    <color name="pastel_blue">#AEC6CF</color> <!-- Soft Blue -->
+    <color name="pastel_purple">#D8BFD8</color> <!-- Soft Purple -->
+    <color name="pastel_yellow">#FFFF99</color> <!-- Soft Yellow -->
+    <color name="pastel_green">#77DD77</color> <!-- Soft Green -->
+
+    <!-- Vibrant Colors -->
+    <color name="vibrant_orange">#FFA500</color> <!-- Vibrant Orange -->
+    <color name="vibrant_pink">#FF1493</color> <!-- Hot Pink -->
+    <color name="vibrant_red">#FF4500</color> <!-- Orange-Red -->
+    <color name="vibrant_blue">#0000FF</color> <!-- Bright Blue -->
+    <color name="vibrant_green">#32CD32</color> <!-- Lime Green -->
+
+    <!-- Earthy Tones -->
+    <color name="earth_brown">#8B4513</color> <!-- Saddle Brown -->
+    <color name="earth_tan">#D2B48C</color> <!-- Tan -->
+    <color name="earth_olive">#556B2F</color> <!-- Dark Olive Green -->
+
+    <!-- Sunset & Ocean Colors -->
+    <color name="sunset_orange">#FF6347</color> <!-- Tomato Orange -->
+    <color name="sunset_purple">#800080</color> <!-- Purple -->
+    <color name="ocean_blue">#4682B4</color> <!-- Steel Blue -->
+    <color name="ocean_green">#20B2AA</color> <!-- Light Sea Green -->
+
+    <!-- Neon Colors -->
+    <color name="neon_pink">#FF00FF</color> <!-- Neon Pink -->
+    <!-- neon_yellow is the same as daisy (#FFFF00) -->
+    <color name="neon_yellow">#FFFF00</color> <!-- Neon Yellow -->
+    <color name="neon_green">#00FF00</color> <!-- Neon Green -->
+
+    <!-- Cosmic Night & Galaxy Theme Colors -->
+    <color name="space_black">#000000</color> <!-- Deep Space Black -->
+    <!-- star_yellow is the same as daisy and neon_yellow (#FFFF00) -->
+    <color name="star_yellow">#FFFF00</color> <!-- Star Yellow -->
+    <color name="galaxy_purple">#800080</color> <!-- Galaxy Purple -->
+    <color name="cosmic_blue">#1E90FF</color> <!-- Cosmic Blue -->
+    <color name="nebula_pink">#FF69B4</color> <!-- Nebula Pink -->
+    <!-- astro_orange is the same as vibrant_red (#FF4500) -->
+    <color name="astro_orange">#FF4500</color> <!-- Astrological Orange -->
+    <color name="daisy_galaxy">#FFC107</color> <!-- Example: a yellow shade -->
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color> <!-- Fully Transparent -->
+</resources>

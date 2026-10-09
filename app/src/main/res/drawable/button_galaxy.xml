@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Gradient background from lavender to ocean green to sunset purple -->
+    <gradient
+        android:startColor="@color/lavender_galaxy"
+        android:centerColor="@color/ocean_green"
+        android:endColor="@color/sunset_purple"
+        android:angle="135" />
+
+    <!-- Rounded corners -->
+    <corners android:radius="32dp" />
+
+    <!-- Neon pink border -->
+    <stroke
+        android:width="4dp"
+        android:color="@color/neon_pink" />
+</shape>
