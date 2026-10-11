@@ -2,16 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/beautiful_gradient"
     tools:context=".MainActivity">
-
-    <!-- Base gradient background -->
-    <View
-        android:id="@+id/background_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/beautiful_gradient" />
 
     <!-- ScrollView for all content -->
     <ScrollView
@@ -24,7 +19,7 @@
         android:paddingEnd="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/main_layout"
+            android:id="@+id/content_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

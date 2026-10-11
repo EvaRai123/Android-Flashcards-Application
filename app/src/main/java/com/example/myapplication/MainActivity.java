@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.view.View;
+import android.widget.FrameLayout;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private View backgroundView;
+    private FrameLayout mainLayout;
     private final List<Flashcard> flashcards = new ArrayList<>();
     private boolean isDarkTheme = false;
     private boolean isLavenderGalaxyActive = false;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        backgroundView = findViewById(R.id.background_view);
+        mainLayout = findViewById(R.id.main_layout);
 
         questionInput = findViewById(R.id.edit_question);
         answerInput = findViewById(R.id.edit_answer);
@@ -84,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
         toggleThemeButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
             if (isDarkTheme) {
-                backgroundView.setBackground(getResources().getDrawable(R.drawable.beautiful_gradient, getTheme()));
+                mainLayout.setBackground(getResources().getDrawable(R.drawable.beautiful_gradient, getTheme()));
             } else {
-                backgroundView.setBackgroundColor(getColorCompat(R.color.black));
+                mainLayout.setBackgroundColor(getColorCompat(R.color.black));
             }
             isDarkTheme = !isDarkTheme;
         });
@@ -94,27 +94,27 @@ public class MainActivity extends AppCompatActivity {
         lavenderGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = true;
             StarfieldDrawable starfield = new StarfieldDrawable();
-            backgroundView.setBackground(starfield);
+            mainLayout.setBackground(starfield);
             // Apply the gradient with embedded nebula overlays on top
-            backgroundView.setForeground(getResources().getDrawable(R.drawable.lavender_galaxy_background, getTheme()));
+            mainLayout.setForeground(getResources().getDrawable(R.drawable.lavender_galaxy_background, getTheme()));
         });
 
         roseGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
-            backgroundView.setForeground(null);
-            backgroundView.setBackgroundColor(getColorCompat(R.color.rose));
+            mainLayout.setForeground(null);
+            mainLayout.setBackgroundColor(getColorCompat(R.color.rose));
         });
 
         daisyGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
-            backgroundView.setForeground(null);
-            backgroundView.setBackgroundColor(getColorCompat(R.color.daisy_galaxy));
+            mainLayout.setForeground(null);
+            mainLayout.setBackgroundColor(getColorCompat(R.color.daisy_galaxy));
         });
 
         sunflowerGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
-            backgroundView.setForeground(null);
-            backgroundView.setBackgroundColor(getColorCompat(R.color.sunflower));
+            mainLayout.setForeground(null);
+            mainLayout.setBackgroundColor(getColorCompat(R.color.sunflower));
         });
 
         editFlashcardButton.setOnClickListener(view -> {
