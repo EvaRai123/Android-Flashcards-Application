@@ -9,6 +9,17 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/galaxy_stars_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/lavender_galaxy_stars"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/edit_question"
         android:layout_width="0dp"
@@ -178,4 +189,3 @@
         tools:ignore="HardcodedText,TextContrastCheck,TouchTargetSizeCheck,VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/star_small"
+        android:duration="900" />
+    <item
+        android:drawable="@drawable/star_medium"
+        android:duration="1100" />
+    <item
+        android:drawable="@drawable/star_small"
+        android:duration="800" />
+    <item
+        android:drawable="@drawable/star_large"
+        android:duration="1400" />
+    <item
+        android:drawable="@drawable/star_medium"
+        android:duration="1000" />
+    <item
+        android:drawable="@drawable/star_small"
+        android:duration="1200" />
+</animation-list>
