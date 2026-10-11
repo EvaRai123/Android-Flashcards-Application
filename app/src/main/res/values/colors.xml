@@ -5,11 +5,23 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Lavender Galaxy Theme Colors -->
-    <color name="lavender_galaxy">#E6E6FA</color>
-    <color name="lavender_galaxy_deep">#24143F</color>
-    <color name="lavender_galaxy_purple">#493078</color>
+    <!-- Palette: Cute, dreamy, whimsical cosmic shades -->
+    <color name="lavender_galaxy_midnight">#24143F</color>
+    <color name="lavender_galaxy_deep">#352052</color>
+    <color name="lavender_galaxy_cosmic">#493078</color>
+    <color name="lavender_galaxy_primary">#6A5A9C</color>
     <color name="lavender_galaxy_light">#9275C9</color>
-    <color name="lavender_galaxy_pale">#DCCBFF</color>
+    <color name="lavender_galaxy_soft">#C5A9F0</color>
+    <color name="lavender_galaxy_pale">#E8DDFB</color>
+    <color name="lavender_galaxy_stardust">#FFF9FF</color>
+    <color name="lavender_galaxy_periwinkle">#9BA8F5</color>
+    <color name="lavender_galaxy_pink">#F2B8D8</color>
+
+    <!-- Old palette (kept for reference) -->
+    <color name="lavender_galaxy">#E6E6FA</color>
+    <color name="lavender_galaxy_deep_old">#24143F</color>
+    <color name="lavender_galaxy_purple">#493078</color>
+    <color name="lavender_galaxy_pale_old">#DCCBFF</color>
     <color name="lavender_galaxy_star">#FFF4C7</color>
     <color name="lavender_galaxy_glow">#E0C3FF</color>
     <color name="lavender_galaxy_input_bg">#2D1F4D</color>

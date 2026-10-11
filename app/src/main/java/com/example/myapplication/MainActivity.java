@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private FrameLayout mainLayout;
+    private ScrollView contentScroll;
+    private ConstraintLayout contentLayout;
     private final List<Flashcard> flashcards = new ArrayList<>();
     private boolean isDarkTheme = false;
     private boolean isLavenderGalaxyActive = false;
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainLayout = findViewById(R.id.main_layout);
+        contentScroll = findViewById(R.id.content_scroll);
+        contentLayout = findViewById(R.id.content_layout);
 
         questionInput = findViewById(R.id.edit_question);
         answerInput = findViewById(R.id.edit_answer);
@@ -88,33 +94,40 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 mainLayout.setBackgroundColor(getColorCompat(R.color.black));
             }
+            contentLayout.setBackgroundColor(getColorCompat(R.color.white));
             isDarkTheme = !isDarkTheme;
         });
 
         lavenderGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = true;
-            StarfieldDrawable starfield = new StarfieldDrawable();
-            mainLayout.setBackground(starfield);
-            // Apply the gradient with embedded nebula overlays on top
-            mainLayout.setForeground(getResources().getDrawable(R.drawable.lavender_galaxy_background, getTheme()));
+            // Set the cosmic background
+            mainLayout.setBackground(getResources().getDrawable(R.drawable.lavender_galaxy_background, getTheme()));
+            // Add the starfield and planets
+            GalaxyStarfieldDrawable starfield = new GalaxyStarfieldDrawable();
+            mainLayout.setForeground(starfield);
+            // Keep content area white but slightly transparent for readability
+            contentLayout.setBackgroundColor(0xF5FFFFFF);
         });
 
         roseGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
             mainLayout.setForeground(null);
             mainLayout.setBackgroundColor(getColorCompat(R.color.rose));
+            contentLayout.setBackgroundColor(getColorCompat(R.color.white));
         });
 
         daisyGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
             mainLayout.setForeground(null);
             mainLayout.setBackgroundColor(getColorCompat(R.color.daisy_galaxy));
+            contentLayout.setBackgroundColor(getColorCompat(R.color.white));
         });
 
         sunflowerGalaxyButton.setOnClickListener(view -> {
             isLavenderGalaxyActive = false;
             mainLayout.setForeground(null);
             mainLayout.setBackgroundColor(getColorCompat(R.color.sunflower));
+            contentLayout.setBackgroundColor(getColorCompat(R.color.white));
         });
 
         editFlashcardButton.setOnClickListener(view -> {

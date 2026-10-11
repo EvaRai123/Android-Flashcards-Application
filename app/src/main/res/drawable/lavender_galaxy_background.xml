@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Base: Deep violet to rich purple gradient -->
+
+    <!-- Layer 1: Deep midnight-to-cosmic gradient foundation -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:angle="135"
-                android:startColor="@color/lavender_galaxy_deep"
-                android:centerColor="@color/lavender_galaxy_purple"
-                android:endColor="@color/lavender_galaxy_light"
+                android:startColor="@color/lavender_galaxy_midnight"
+                android:centerColor="@color/lavender_galaxy_deep"
+                android:endColor="@color/lavender_galaxy_cosmic"
                 android:type="linear" />
         </shape>
     </item>
 
-    <!-- Overlay 1: Subtle nebula gradient -->
+    <!-- Layer 2: Soft lavender overlay for atmospheric blend -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:angle="45"
-                android:startColor="#40D8B4FF"
-                android:centerColor="#20493078"
+                android:startColor="#4585A9F5"
+                android:centerColor="#2062405E"
                 android:endColor="#00000000"
                 android:type="linear" />
         </shape>
     </item>
 
-    <!-- Overlay 2: Depth gradient -->
+    <!-- Layer 3: Delicate nebula wisp (periwinkle accent) -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:angle="270"
-                android:startColor="#1A493078"
-                android:endColor="#40DCCBFF"
+                android:startColor="#15F2B8D8"
+                android:centerColor="#00000000"
+                android:endColor="#1E9BA8F5"
                 android:type="linear" />
         </shape>
     </item>
+
 </layer-list>
