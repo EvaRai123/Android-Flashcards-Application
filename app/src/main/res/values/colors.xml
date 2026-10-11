@@ -4,13 +4,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Lavender Galaxy (immersive cosmic theme) -->
+    <!-- Lavender Galaxy Theme Colors -->
     <color name="lavender_galaxy">#E6E6FA</color>
-    <color name="lavender_galaxy_deep">#160B2E</color>
-    <color name="lavender_galaxy_midnight">#2A1045</color>
-    <color name="lavender_galaxy_glow">#D8B4FF</color>
-    <color name="lavender_galaxy_mist">#B39DDB</color>
+    <color name="lavender_galaxy_deep">#24143F</color>
+    <color name="lavender_galaxy_purple">#493078</color>
+    <color name="lavender_galaxy_light">#9275C9</color>
+    <color name="lavender_galaxy_pale">#DCCBFF</color>
     <color name="lavender_galaxy_star">#FFF4C7</color>
+    <color name="lavender_galaxy_glow">#E0C3FF</color>
+    <color name="lavender_galaxy_input_bg">#2D1F4D</color>
 
     <!-- Rose -->
     <color name="rose">#FF007F</color>

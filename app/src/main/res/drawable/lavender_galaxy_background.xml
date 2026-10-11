@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base: Deep violet to rich purple gradient -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:angle="135"
-                android:centerColor="@color/lavender_galaxy_midnight"
-                android:endColor="@color/space_black"
                 android:startColor="@color/lavender_galaxy_deep"
+                android:centerColor="@color/lavender_galaxy_purple"
+                android:endColor="@color/lavender_galaxy_light"
                 android:type="linear" />
         </shape>
     </item>
 
+    <!-- Overlay 1: Subtle nebula gradient -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:angle="45"
-                android:centerColor="#331A2F6D"
+                android:startColor="#40D8B4FF"
+                android:centerColor="#20493078"
                 android:endColor="#00000000"
-                android:startColor="#4D6A3CCF"
                 android:type="linear" />
         </shape>
     </item>
 
+    <!-- Overlay 2: Depth gradient -->
     <item>
         <shape android:shape="rectangle">
             <gradient
-                android:angle="90"
-                android:centerColor="#1A2B0F4C"
-                android:endColor="#00000000"
-                android:startColor="#332D0E63"
+                android:angle="270"
+                android:startColor="#1A493078"
+                android:endColor="#40DCCBFF"
                 android:type="linear" />
         </shape>
     </item>

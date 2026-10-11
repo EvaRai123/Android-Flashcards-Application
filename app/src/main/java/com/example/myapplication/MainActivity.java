@@ -1,26 +1,24 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.view.View;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ConstraintLayout mainLayout;
-    private View galaxyStarsOverlay;
+    private View backgroundView;
     private final List<Flashcard> flashcards = new ArrayList<>();
     private boolean isDarkTheme = false;
+    private boolean isLavenderGalaxyActive = false;
 
     private EditText questionInput;
     private EditText answerInput;
@@ -31,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mainLayout = findViewById(R.id.main_layout);
-        galaxyStarsOverlay = findViewById(R.id.galaxy_stars_overlay);
+        backgroundView = findViewById(R.id.background_view);
 
         questionInput = findViewById(R.id.edit_question);
         answerInput = findViewById(R.id.edit_answer);
@@ -85,30 +82,39 @@ public class MainActivity extends AppCompatActivity {
         });
 
         toggleThemeButton.setOnClickListener(view -> {
-            hideGalaxyOverlay();
+            isLavenderGalaxyActive = false;
             if (isDarkTheme) {
-                mainLayout.setBackgroundResource(R.drawable.beautiful_gradient);
+                backgroundView.setBackground(getResources().getDrawable(R.drawable.beautiful_gradient, getTheme()));
             } else {
-                mainLayout.setBackgroundColor(getColorCompat(R.color.black));
+                backgroundView.setBackgroundColor(getColorCompat(R.color.black));
             }
             isDarkTheme = !isDarkTheme;
         });
 
         lavenderGalaxyButton.setOnClickListener(view -> {
-            mainLayout.setBackgroundResource(R.drawable.lavender_galaxy_background);
-            showGalaxyOverlay();
+            isLavenderGalaxyActive = true;
+            StarfieldDrawable starfield = new StarfieldDrawable();
+            backgroundView.setBackground(starfield);
+            // Apply the gradient with embedded nebula overlays on top
+            backgroundView.setForeground(getResources().getDrawable(R.drawable.lavender_galaxy_background, getTheme()));
         });
+
         roseGalaxyButton.setOnClickListener(view -> {
-            hideGalaxyOverlay();
-            mainLayout.setBackgroundColor(getColorCompat(R.color.rose));
+            isLavenderGalaxyActive = false;
+            backgroundView.setForeground(null);
+            backgroundView.setBackgroundColor(getColorCompat(R.color.rose));
         });
+
         daisyGalaxyButton.setOnClickListener(view -> {
-            hideGalaxyOverlay();
-            mainLayout.setBackgroundColor(getColorCompat(R.color.daisy_galaxy));
+            isLavenderGalaxyActive = false;
+            backgroundView.setForeground(null);
+            backgroundView.setBackgroundColor(getColorCompat(R.color.daisy_galaxy));
         });
+
         sunflowerGalaxyButton.setOnClickListener(view -> {
-            hideGalaxyOverlay();
-            mainLayout.setBackgroundColor(getColorCompat(R.color.sunflower));
+            isLavenderGalaxyActive = false;
+            backgroundView.setForeground(null);
+            backgroundView.setBackgroundColor(getColorCompat(R.color.sunflower));
         });
 
         editFlashcardButton.setOnClickListener(view -> {
@@ -133,22 +139,6 @@ public class MainActivity extends AppCompatActivity {
 
         totalFlashcardsButton.setOnClickListener(view ->
                 Toast.makeText(this, "Total Flashcards: " + flashcards.size(), Toast.LENGTH_SHORT).show());
-    }
-
-    private void showGalaxyOverlay() {
-        galaxyStarsOverlay.setVisibility(View.VISIBLE);
-        if (galaxyStarsOverlay.getBackground() instanceof AnimationDrawable) {
-            AnimationDrawable stars = (AnimationDrawable) galaxyStarsOverlay.getBackground();
-            stars.stop();
-            stars.start();
-        }
-    }
-
-    private void hideGalaxyOverlay() {
-        galaxyStarsOverlay.setVisibility(View.GONE);
-        if (galaxyStarsOverlay.getBackground() instanceof AnimationDrawable) {
-            ((AnimationDrawable) galaxyStarsOverlay.getBackground()).stop();
-        }
     }
 
     private @ColorInt int getColorCompat(int colorResId) {

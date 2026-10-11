@@ -1,191 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/beautiful_gradient"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!-- Base gradient background -->
     <View
-        android:id="@+id/galaxy_stars_overlay"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lavender_galaxy_stars"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/beautiful_gradient" />
 
-    <EditText
-        android:id="@+id/edit_question"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter Question"
-        android:padding="12dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+    <!-- ScrollView for all content -->
+    <ScrollView
+        android:id="@+id/content_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
-    <EditText
-        android:id="@+id/edit_answer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Enter Answer"
-        android:padding="12dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_question"
-        tools:ignore="Autofill,HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/add_flashcard_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/sunset_orange"
-        android:padding="16dp"
-        android:text="Add Flashcard"
-        android:textColor="#3E2723"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_answer"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+            <EditText
+                android:id="@+id/edit_question"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:hint="Enter Question"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="Autofill,HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
-    <Button
-        android:id="@+id/show_flashcards_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/ocean_blue"
-        android:padding="16dp"
-        android:text="Show Flashcards"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_flashcard_button"
-        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+            <EditText
+                android:id="@+id/edit_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/black"
+                android:hint="Enter Answer"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_question"
+                tools:ignore="Autofill,HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
-    <Button
-        android:id="@+id/toggle_theme_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/vibrant_pink"
-        android:padding="16dp"
-        android:text="Toggle Theme"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/show_flashcards_button"
-        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/add_flashcard_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/sunset_orange"
+                android:padding="16dp"
+                android:text="Add Flashcard"
+                android:textColor="#3E2723"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_answer"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
-    <Button
-        android:id="@+id/lavender_galaxy_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/lavender_galaxy"
-        android:padding="16dp"
-        android:text="Lavender Galaxy"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toggle_theme_button"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/show_flashcards_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/ocean_blue"
+                android:padding="16dp"
+                android:text="Show Flashcards"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_flashcard_button"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
 
-    <Button
-        android:id="@+id/rose_galaxy_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/rose"
-        android:padding="16dp"
-        android:text="Rose Galaxy"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lavender_galaxy_button"
-        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/toggle_theme_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/vibrant_pink"
+                android:padding="16dp"
+                android:text="Toggle Theme"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/show_flashcards_button"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
 
-    <Button
-        android:id="@+id/daisy_galaxy_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/daisy"
-        android:padding="16dp"
-        android:text="Daisy Galaxy"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rose_galaxy_button"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+            <TextView
+                android:id="@+id/themes_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Themes"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toggle_theme_button"
+                tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/sunflower_galaxy_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/sunflower"
-        android:padding="16dp"
-        android:text="Sunflower Galaxy"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/daisy_galaxy_button"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/lavender_galaxy_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/lavender_galaxy"
+                android:padding="16dp"
+                android:text="Lavender Galaxy"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/themes_label"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
-    <Button
-        android:id="@+id/edit_flashcard_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/vibrant_blue"
-        android:padding="16dp"
-        android:text="Edit Flashcard"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sunflower_galaxy_button"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/rose_galaxy_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/rose"
+                android:padding="16dp"
+                android:text="Rose Galaxy"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lavender_galaxy_button"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
 
-    <Button
-        android:id="@+id/delete_flashcard_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/vibrant_red"
-        android:padding="16dp"
-        android:text="Delete Flashcard"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_flashcard_button"
-        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/daisy_galaxy_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/daisy"
+                android:padding="16dp"
+                android:text="Daisy Galaxy"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rose_galaxy_button"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
-    <Button
-        android:id="@+id/total_flashcards_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/pastel_purple"
-        android:minHeight="48dp"
-        android:padding="16dp"
-        android:text="Total Flashcards"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/delete_flashcard_button"
-        tools:ignore="HardcodedText,TextContrastCheck,TouchTargetSizeCheck,VisualLintButtonSize" />
+            <Button
+                android:id="@+id/sunflower_galaxy_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/sunflower"
+                android:padding="16dp"
+                android:text="Sunflower Galaxy"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/daisy_galaxy_button"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/actions_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Actions"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sunflower_galaxy_button"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/edit_flashcard_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/vibrant_blue"
+                android:padding="16dp"
+                android:text="Edit Flashcard"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/actions_label"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/delete_flashcard_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/vibrant_red"
+                android:padding="16dp"
+                android:text="Delete Flashcard"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_flashcard_button"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/total_flashcards_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/pastel_purple"
+                android:minHeight="48dp"
+                android:padding="16dp"
+                android:text="Total Flashcards"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/delete_flashcard_button"
+                tools:ignore="HardcodedText,TextContrastCheck,TouchTargetSizeCheck,VisualLintButtonSize" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>
