@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private ConstraintLayout mainLayout;
     private final List<Flashcard> flashcards = new ArrayList<>();
     private boolean isDarkTheme = false;
@@ -23,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText questionInput;
     private EditText answerInput;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,26 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
         mainLayout = findViewById(R.id.main_layout);
 
-        // FIX: Use correct IDs for question and answer inputs
         questionInput = findViewById(R.id.edit_question);
         answerInput = findViewById(R.id.edit_answer);
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button addFlashcardButton = findViewById(R.id.add_flashcard_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button showFlashcardsButton = findViewById(R.id.show_flashcards_button);
         Button toggleThemeButton = findViewById(R.id.toggle_theme_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button lavenderGalaxyButton = findViewById(R.id.lavender_galaxy_button);
         Button roseGalaxyButton = findViewById(R.id.rose_galaxy_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button daisyGalaxyButton = findViewById(R.id.daisy_galaxy_button);
         Button sunflowerGalaxyButton = findViewById(R.id.sunflower_galaxy_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button editFlashcardButton = findViewById(R.id.edit_flashcard_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button deleteFlashcardButton = findViewById(R.id.delete_flashcard_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button totalFlashcardsButton = findViewById(R.id.total_flashcards_button);
 
         addFlashcardButton.setOnClickListener(view -> {
@@ -66,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             flashcards.add(flashcard);
             Toast.makeText(this, "Flashcard Added!", Toast.LENGTH_SHORT).show();
 
-            // Clear inputs after adding
             questionInput.setText("");
             answerInput.setText("");
         });
@@ -117,12 +105,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        totalFlashcardsButton.setOnClickListener(view -> Toast.makeText(this, "Total Flashcards: " + flashcards.size(), Toast.LENGTH_SHORT).show());
+        totalFlashcardsButton.setOnClickListener(view ->
+                Toast.makeText(this, "Total Flashcards: " + flashcards.size(), Toast.LENGTH_SHORT).show());
     }
 
     private @ColorInt int getColorCompat(int colorResId) {
         return getResources().getColor(colorResId, getTheme());
     }
-
-
 }
